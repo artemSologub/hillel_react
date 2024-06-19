@@ -15,7 +15,7 @@ export default function AnimalRow(props) {
 
   const [animalRow, setAnimalRow] = useState(INACTIVE_STATE);
 
-  const onClickActivate = (active) => {
+  const onToggleActivation = (active) => {
     active ? setAnimalRow(ACTIVE_STATE) : setAnimalRow(INACTIVE_STATE);
   };
 
@@ -27,7 +27,7 @@ export default function AnimalRow(props) {
     <li style={animalRow.styles}>
       {props.animal.icon}
       {props.animal.type}
-      <button onClick={() => onClickActivate(!animalRow.active)}>
+      <button onClick={() => onToggleActivation(!animalRow.active)}>
         {animalRow.buttonName}
       </button>
       <button onClick={() => onClickDelete(props.index)}>Delete</button>
