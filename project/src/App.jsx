@@ -1,7 +1,7 @@
-import './App.css'
-import Header from './components/header/Header';
-import Login from './components/login/Login';
-import Menu from './components/menu/Menu';
+import './App.css';
+import Header from './components/Header/Header';
+import Login from './components/Login/Login';
+import Menu from './components/Menu/Menu';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         </main>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
