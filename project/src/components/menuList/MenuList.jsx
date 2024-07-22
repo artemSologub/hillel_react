@@ -1,6 +1,6 @@
-import MenuItem from '../menuItem/MenuItem';
+import MenuItem from '../MenuItem/MenuItem';
 
-const MenuList = ({ items }) => {
+const MenuList = ({ items = [] }) => {
   return (
     <ul>
       {items.map((item) => (
@@ -8,6 +8,6 @@ const MenuList = ({ items }) => {
       ))}
     </ul>
   );
-}
+};
 
 export default MenuList;

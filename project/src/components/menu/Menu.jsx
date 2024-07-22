@@ -1,25 +1,20 @@
 import { useEffect, useState } from 'react';
 
 import useFetch from '../../hooks/use-fetch';
-import MenuList from '../menuList/MenuList';
+import MenuList from '../MenuList/MenuList';
 
 const Menu = () => {
-  const [items, setItems] = useState([]);
-  const { data, error, isLoading } = useFetch('https://react-fast-pizza-api.onrender.com/api/menu');
-
-  useEffect(() => {
-    if (data) {
-      setItems(data.data);
-    }
-  }, [data]);
+  const { data, error, isLoading } = useFetch(
+    'https://react-fast-pizza-api.onrender.com/api/menu'
+  );
 
   return (
     <>
       {isLoading && <p>Loading...</p>}
       {error && <p>Error: {error.message}</p>}
-      <MenuList items={items} />
+      <MenuList items={data.data} />
     </>
   );
-}
+};
 
 export default Menu;
