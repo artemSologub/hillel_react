@@ -1,0 +1,4 @@
+.cart__row {
+  display: grid;
+  grid-template-columns: 20px 1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
+}

@@ -1,13 +1,18 @@
+import { Link } from 'react-router-dom';
+
 import Input from '../Input/Input';
 import './Header.css';
 
 const Header = () => {
   return (
     <>
-      <header class="header">
-        <a class="logo" href="/">
+      <header className="header">
+        <Link className="logo" to="/">
           Pizza Day
-        </a>
+        </Link>
+        <Link className="logo" to="/cart">
+          Cart
+        </Link>
         <form>
           <Input inputPlaceholder={'Search for the order #'} />
         </form>

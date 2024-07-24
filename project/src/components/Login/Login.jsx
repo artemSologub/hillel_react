@@ -5,17 +5,19 @@ import './Login.css';
 const Login = () => {
   return (
     <>
-      <h1 class="title">
+      <h1 className="title">
         The best pizza.
         <br />
-        <span class="text-yellow">
+        <span className="text-yellow">
           Straight out of the oven, straight to you.
         </span>
       </h1>
-      <p class="sub-title">👋 Welcome! Please start by telling us your name:</p>
-      <form class="login-form">
+      <p className="sub-title">
+        👋 Welcome! Please start by telling us your name:
+      </p>
+      <form className="login-form">
         <Input inputType={'text'} inputPlaceholder={'Your full name'} />
-        <Button buttonName={'Login'} />
+        <Button text={'Login'} />
       </form>
     </>
   );
