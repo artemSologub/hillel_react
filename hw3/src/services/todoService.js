@@ -1,6 +1,5 @@
 import axios from 'axios';
-
-const API_URL = 'https://jsonplaceholder.typicode.com/todos';
+import { API_URL } from '../constants';
 
 export const fetchTodos = async () => {
   const response = await axios.get(API_URL);
