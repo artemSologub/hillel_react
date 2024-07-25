@@ -1,4 +1,7 @@
+import { Routes, Route } from 'react-router-dom';
+
 import './App.css';
+import Cart from './components/Cart/Cart';
 import Header from './components/Header/Header';
 import Login from './components/Login/Login';
 import Menu from './components/Menu/Menu';
@@ -6,11 +9,14 @@ import Menu from './components/Menu/Menu';
 function App() {
   return (
     <>
-      <div class="wrapper">
+      <div className="wrapper">
         <Header />
-        <main class="content">
-          <Login />
-          <Menu />
+        <main className="content">
+          <Routes>
+            <Route path="" element={<Menu />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/cart/" element={<Cart />} />
+          </Routes>
         </main>
       </div>
     </>
