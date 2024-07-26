@@ -5,6 +5,7 @@ import Cart from './components/Cart/Cart';
 import Header from './components/Header/Header';
 import Login from './components/Login/Login';
 import Menu from './components/Menu/Menu';
+import OrderNew from './components/OrderNew/OrderNew';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="" element={<Menu />} />
             <Route path="/login" element={<Login />} />
             <Route path="/cart/" element={<Cart />} />
+            <Route path="/order/new" element={<OrderNew />} />
           </Routes>
         </main>
       </div>
