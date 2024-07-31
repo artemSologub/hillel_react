@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { tasks } from './mock/tasks';
-import { LIST_COLUMNS } from './constants/app-constants';
-import List from './components/List';
+import { useState, useEffect } from "react";
+import { tasks } from "./mock/tasks";
+import { LIST_COLUMNS } from "./constants/app-constants";
+import List from "./components/List";
 
 function App() {
   const [tasksList, setTasksList] = useState(tasks);
