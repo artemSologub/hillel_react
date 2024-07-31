@@ -1,15 +1,31 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
-const useFetch = (url) => {
+const useFetch = (
+  url,
+  initialMethod = 'GET',
+  initialBody = null,
+  immediate = true
+) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
+  const fetchData = useCallback(
+    async (method = initialMethod, body = initialBody) => {
       setIsLoading(true);
       try {
-        const response = await fetch(url);
+        const options = {
+          method,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        };
+
+        if (body && method !== 'GET') {
+          options.body = JSON.stringify(body);
+        }
+
+        const response = await fetch(url, options);
         if (!response.ok) {
           throw new Error(`Error: ${response.status}`);
         }
@@ -20,12 +36,17 @@ const useFetch = (url) => {
       } finally {
         setIsLoading(false);
       }
-    };
+    },
+    [url, initialMethod, initialBody]
+  );
 
-    fetchData();
-  }, [url]);
+  useEffect(() => {
+    if (immediate) {
+      fetchData();
+    }
+  }, [fetchData, immediate]);
 
-  return { data, error, isLoading };
+  return { data, error, isLoading, fetchData };
 };
 
 export default useFetch;

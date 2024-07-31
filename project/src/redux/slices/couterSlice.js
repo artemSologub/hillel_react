@@ -48,7 +48,6 @@ export const cartSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
 export const { decrement, increment, addToCart, deleteFromCart, resetCart } =
   cartSlice.actions;
 

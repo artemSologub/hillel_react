@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-
 import useFetch from '../../hooks/use-fetch';
 import MenuList from '../MenuList/MenuList';
 
@@ -12,7 +10,7 @@ const Menu = () => {
     <>
       {isLoading && <p>Loading...</p>}
       {error && <p>Error: {error.message}</p>}
-      <MenuList items={data.data} />
+      <MenuList items={data?.data} />
     </>
   );
 };
